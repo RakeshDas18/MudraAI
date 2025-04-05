@@ -1,0 +1,217 @@
+@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+
+	html, body {
+	    overflow-x: hidden;
+	}
+
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+.image.fit img {
+	width: 100%;
+	height: auto;
+}
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	ol, ul {
+		list-style: none;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+/* Box Model */
+
+	*, *:before, *:after {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+/* Containers */
+
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.container.\31 25\25 {
+		width: 100%;
+		max-width: 100rem;
+		min-width: 80rem;
+	}
+
+	.container.\37 5\25 {
+		width: 60rem;
+	}
+
+	.container.\35 0\25 {
+		width: 40rem;
+	}
+
+	.container.\32 5\25 {
+		width: 20rem;
+	}
+
+	.container {
+		width: 80rem;
+	}
+
+	@media screen and (max-width: 1680px) {
+
+		.container.\31 25\25 {
+			width: 100%;
+			max-width: 100rem;
+			min-width: 80rem;
+		}
+
+		.container.\37 5\25 {
+			width: 60rem;
+		}
+
+		.container.\35 0\25 {
+			width: 40rem;
+		}
+
+		.container.\32 5\25 {
+			width: 20rem;
+		}
+
+		.container {
+			width: 80rem;
+		}
+
+	}
+
+	@media screen and (max-width: 1280px) {
+
+		.container.\31 25\25 {
+			width: 100%;
+			max-width: 81.25rem;
+			min-width: 65rem;
+		}
+
+		.container.\37 5\25 {
+			width: 48.75rem;
+		}
+
+		.container.\35 0\25 {
+			width: 32.5rem;
+		}
+
+		.container.\32 5\25 {
+			width: 16.25rem;
+		}
+
+		.container {
+			width: 65rem;
+		}
+
+	}
+
+	@media screen and (max-width: 980px) {
+
+		.container.\31 25\25 {
+			width: 100%;
+			max-width: 112.5%;
+			min-width: 90%;
+		}
+
+		.container.\37 5\25 {
+			width: 67.5%;
+		}
+
+		.container.\35 0\25 {
+			width: 45%;
+		}
+
+		.container.\32 5\25 {
+			width: 22.5%;
+		}
+
+		.container {
+			width: 90%;
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.container.\31 25\25 {
+			width: 100%;
+			max-width: 112.5%;
+			min-width: 90%;
+		}
+
+		.container.\37 5\25 {
+			width: 67.5%;
+		}
+
+		.container.\35 0\25 {
+			width: 45%;
+		}
+
+		.container.\32 5\25 {
+			width: 22.5%;
+		}
+
+		.container {
+			width: 90% !important;
+		}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.container.\31 25\25 {
+			width: 100%;
+			max-width: 112.5%;
+			min-width: 90%;
+		}
+
+		.container.\37 5\25 {
+			width: 67.5%;
+		}
+
+		.container.\35 0\25 {
+			width: 45%;
+		}
+
+		.container.\32 5\25 {
+			width: 22.5%;
+		}
+
+		.container {
+			width: 90% !important;
+		}
+
+	}
