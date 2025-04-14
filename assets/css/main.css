@@ -2475,3 +2475,234 @@ input[type="radio"]:focus + label:before {
 .icon > .label {
   display: none;
 }
+
+/* Image */
+
+.image {
+  border-radius: 2px;
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+
+  .image img {
+    border-radius: 2px;
+    display: block;
+  }
+
+  .image.left, .image.right {
+    max-width: 40%;
+  }
+
+    .image.left img, .image.right img {
+      width: 100%;
+    }
+
+  .image.left {
+    float: left;
+    margin: 0 1.5rem 1rem 0;
+    top: 0.25rem;
+  }
+
+  .image.right {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+    top: 0.25rem;
+  }
+
+  .image.fit {
+    display: block;
+    margin: 0 0 2rem 0;
+    width: 100%;
+  }
+
+    .image.fit img {
+      width: 100%;
+    }
+
+  .image.main {
+    display: block;
+    margin: 0 0 3rem 0;
+    width: 100%;
+  }
+
+    .image.main img {
+      width: 100%;
+    }
+
+/* List */
+
+ol {
+  list-style: decimal;
+  margin: 0 0 2rem 0;
+  padding-left: 1.25rem;
+}
+
+  ol li {
+    padding-left: 0.25rem;
+  }
+
+ul {
+  list-style: disc;
+  margin: 0 0 2rem 0;
+  padding-left: 1rem;
+}
+
+  ul li {
+    padding-left: 0.5rem;
+  }
+
+  ul.alt {
+    list-style: none;
+    padding-left: 0;
+  }
+
+    ul.alt li {
+      border-top: solid 1px;
+      padding: 0.5rem 0;
+    }
+
+      ul.alt li:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+  ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+  }
+
+    ul.icons li {
+      display: inline-block;
+      padding: 0 1rem 0 0;
+    }
+
+      ul.icons li:last-child {
+        padding-right: 0;
+      }
+
+      ul.icons li .icon:before {
+        font-size: 2rem;
+      }
+
+  ul.actions {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+  }
+
+    ul.actions li {
+      display: inline-block;
+      padding: 0 1rem 0 0;
+      vertical-align: middle;
+    }
+
+      ul.actions li:last-child {
+        padding-right: 0;
+      }
+
+    ul.actions.small li {
+      padding: 0 0.5rem 0 0;
+    }
+
+    ul.actions.vertical li {
+      display: block;
+      padding: 1rem 0 0 0;
+    }
+
+      ul.actions.vertical li:first-child {
+        padding-top: 0;
+      }
+
+      ul.actions.vertical li > * {
+        margin-bottom: 0;
+      }
+
+    ul.actions.vertical.small li {
+      padding: 0.5rem 0 0 0;
+    }
+
+      ul.actions.vertical.small li:first-child {
+        padding-top: 0;
+      }
+
+    ul.actions.fit {
+      display: table;
+      margin-left: -1rem;
+      padding: 0;
+      table-layout: fixed;
+      width: calc(100% + 1rem);
+    }
+
+      ul.actions.fit li {
+        display: table-cell;
+        padding: 0 0 0 1rem;
+      }
+
+        ul.actions.fit li > * {
+          margin-bottom: 0;
+        }
+
+      ul.actions.fit.small {
+        margin-left: -0.5rem;
+        width: calc(100% + 0.5rem);
+      }
+
+        ul.actions.fit.small li {
+          padding: 0 0 0 0.5rem;
+        }
+
+    @media screen and (max-width: 480px) {
+
+      ul.actions {
+        margin: 0 0 2rem 0;
+      }
+
+        ul.actions li {
+          padding: 1rem 0 0 0;
+          display: block;
+          text-align: center;
+          width: 100%;
+        }
+
+          ul.actions li:first-child {
+            padding-top: 0;
+          }
+
+          ul.actions li > * {
+            width: 100%;
+            margin: 0 !important;
+          }
+
+            ul.actions li > *.icon:before {
+              margin-left: -2rem;
+            }
+
+        ul.actions.small li {
+          padding: 0.5rem 0 0 0;
+        }
+
+          ul.actions.small li:first-child {
+            padding-top: 0;
+          }
+
+    }
+
+dl {
+  margin: 0 0 2rem 0;
+}
+
+  dl dt {
+    display: block;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+  }
+
+  dl dd {
+    margin-left: 2rem;
+  }
+
+ul.alt li {
+  border-top-color: rgba(144, 144, 144, 0.25);
+}
