@@ -2706,3 +2706,35 @@ dl {
 ul.alt li {
   border-top-color: rgba(144, 144, 144, 0.25);
 }
+
+/* Section/Article */
+
+section.special, article.special {
+  text-align: center;
+}
+
+header p {
+  position: relative;
+  margin: 0 0 1.5rem 0;
+}
+
+header h2 + p {
+  font-size: 1.25rem;
+  margin-top: -1rem;
+}
+
+header h3 + p {
+  font-size: 1.1rem;
+  margin-top: -0.8rem;
+}
+
+header h4 + p,
+header h5 + p,
+header h6 + p {
+  font-size: 0.9rem;
+  margin-top: -0.6rem;
+}
+
+header p {
+  color: #bbb;
+}
