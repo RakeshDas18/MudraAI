@@ -1,0 +1,265 @@
+.heading {
+    grid-area: header;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: bolder;
+    color: #1e1e1f;
+    margin-bottom: 40px;
+    text-align: center;
+    font-style: normal;
+    font-family: serif;
+}
+
+.main-container {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.right-top-container,
+.right-bottom-container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
+    padding: 20px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-top-container {
+    grid-area: right-top;
+}
+
+.right-bottom-container {
+    grid-area: right-bottom;
+}
+
+.upload-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.drop-area {
+    width: 100%;
+    height: 220px;
+    border-radius: 20px;
+    border: 2px dashed #bbb5ff;
+    background: #f7f8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    touch-action: manipulation;
+}
+
+.drop-area.drag-over,
+.drop-area:active {
+    background: #dcd6ff;
+    border-color: #8a7dff;
+}
+
+.drop-area img {
+    width: 80px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.drop-area p {
+    font-size: 20px;
+    color: #0c0c0c;
+    transition: 0.3s;
+    padding: 0 10px;
+}
+
+.drop-area span {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+#preview-container {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f7f8ff;
+    z-index: 1;
+}
+
+#preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.upload-btn:hover,
+.upload-btn:active {
+    background: #5a4acd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.upload-btn:disabled {
+    background: #bbb;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.spinner-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(106, 90, 205, 0.2);
+    border-top: 4px solid #6a5acd;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.status-message {
+    font-size: 16px;
+    color: #6a5acd;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: #4caf50;
+    display: none;
+}
+
+.error-message {
+    color: #f44336;
+    display: none;
+}
+
+.container-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6a5acd;
+    margin-bottom: 15px;
+}
+
+.container-content {
+    color: #666;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Better responsive layout */
+@media (max-width: 992px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "right-top"
+            "right-bottom";
+        padding: 12px;
+        gap: 16px;
+    }
+
+    .heading {
+        margin-bottom: 16px;
+    }
+
+    .right-top-container,
+    .right-bottom-container {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        min-height: 180px;
+    }
+
+    .upload-container {
+        padding: 16px;
+    }
+
+    .drop-area {
+        height: 200px;
+    }
+}
+
+/* Additional Android-specific fixes */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+
+    .drop-area {
+        height: 180px;
+    }
+
+    .drop-area p {
+        font-size: 14px;
+    }
+
+    .upload-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* Accessibility improvements */
+input[type="file"] {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Fix for Android browsers to properly handle tapping */
+input[type="file"]::-webkit-file-upload-button {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+}
