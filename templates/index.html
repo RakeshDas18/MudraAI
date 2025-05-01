@@ -11,54 +11,50 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
-    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../static/css/main.css" />
   </head>
   <body>
     <!-- Header -->
     <header id="header" class="alt">
       <div class="logo">
-        <a href="index.html">Mudra AI</a>
+        <a href="{{ url_for('index') }}">Mudra AI</a>
       </div>
       <a href="#menu">Menu</a>
     </header>
     <!-- Nav -->
     <nav id="menu">
       <ul class="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="upload.html">Use AI</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('upload') }}">Use AI</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
       </ul>
     </nav>
     <!-- Banner -->
     <section class="banner full">
       <article>
-        <img src="../images/img0001.png" alt="" width="1440" height="961" />
+        <img src="/static/images/img0001.png" alt="" width="1440" height="961" />
         <div class="inner">
           <header>
             <p>Explore the ancient hand gestures of Sattriya dance</p>
             <h2>Sattriya Mudras</h2>
             <br /><br />
-            <button>
-              <a style="text-decoration: none; color: black;" href="ai.html">TRY NOW</a>
-            </button>
+            <button onclick="goToupload()">TRY NOW</button>
           </header>
         </div>
       </article>
       <article>
-        <img src="../images/img0002.png" alt="" width="1440" height="961" />
+        <img src="/static/images/img0002.png" alt="" width="1440" height="961" />
         <div class="inner">
           <header>
             <p>Discover the spiritual significance of Sattriya mudras</p>
             <h2>Grace in Motion</h2>
             <br /><br />
-            <button>
-              <a style="text-decoration: none; color: black" href="upload.html">TRY NOW</a>
-            </button>
+            <button onclick="goToupload()">TRY NOW</button>
           </header>
         </div>
       </article>
       <article>
-        <img src="../images/img0003.png" alt="" width="1440" height="962" />
+        <img src="/static/images/img0003.png" alt="" width="1440" height="962" />
         <div class="inner">
           <header>
             <p>
@@ -66,14 +62,12 @@
             </p>
             <h2>Graceful Storytelling</h2>
             <br /><br />
-            <button>
-              <a style="text-decoration: none; color: black" href="uplo\.html">TRY NOW</a>
-            </button>
+            <button onclick="goToupload()">TRY NOW</button>
           </header>
         </div>
       </article>
       <article>
-        <img src="../images/img0004.png" alt="" width="1440" height="961" />
+        <img src="/static/images/img0004.png" alt="" width="1440" height="961" />
         <div class="inner">
           <header>
             <p>
@@ -82,22 +76,18 @@
             </p>
             <h2>Expressions of Devotion</h2>
             <br /><br />
-            <button>
-              <a style="text-decoration: none; color: black" href="upload.html">TRY NOW</a>
-            </button>
+            <button onclick="goToupload()">TRY NOW</button>
           </header>
         </div>
       </article>
       <article>
-        <img src="../images/img0005.png" alt="" width="1440" height="962" />
+        <img src="/static/images/img0005.png" alt="" width="1440" height="962" />
         <div class="inner">
           <header>
             <p>Sattriya's rich mudra repertoire extends beyond storytelling.</p>
             <h2>The Eternal Cycle</h2>
             <br /><br />
-            <button>
-              <a style="text-decoration: none; color: black" href="upload.html">TRY NOW</a>
-            </button>
+            <button onclick="goToupload()">TRY NOW</button>
           </header>
         </div>
       </article>
@@ -109,7 +99,7 @@
           <div>
             <div class="box">
               <div class="image fit">
-                <img src="../images/img0006.png" alt="" width="600" height="300" />
+                <img src="/static/images/img0006.png" alt="" width="600" height="300" />
               </div>
               <div class="content">
                 <header class="align-center">
@@ -136,7 +126,7 @@
           <div>
             <div class="box">
               <div class="image fit">
-                <img src="../images/img0007.png" alt="" width="600" height="300" />
+                <img src="/static/images/img0007.png" alt="" width="600" height="300" />
               </div>
               <div class="content">
                 <header class="align-center">
@@ -180,9 +170,7 @@
             alive, connecting the physical world with the divine.
           </p>
           <h2>MudraAI</h2>
-          <button>
-            <a style="text-decoration: none" href="upload.html">TRY NOW</a>
-          </button>
+          <button onclick="goToupload()">TRY NOW</button>
         </header>
       </div>
     </section>
@@ -204,28 +192,28 @@
           <div>
             <div class="image fit">
               <a href="#"
-                ><img src="../images/img0008.png" alt="" width="600" height="300"
+                ><img src="/static/images/img0008.png" alt="" width="600" height="300"
               /></a>
             </div>
           </div>
           <div>
             <div class="image fit">
               <a href="#"
-                ><img src="../images/img0009.png" alt="" width="600" height="300"
+                ><img src="/static/images/img0009.png" alt="" width="600" height="300"
               /></a>
             </div>
           </div>
           <div>
             <div class="image fit">
               <a href="#"
-                ><img src="../images/img00010.png" alt="" width="600" height="300"
+                ><img src="/static/images/img00010.png" alt="" width="600" height="300"
               /></a>
             </div>
           </div>
           <div>
             <div class="image fit">
               <a href="#"
-                ><img src="../images/img0001.png" alt="" width="600" height="300"
+                ><img src="/static/images/img0001.png" alt="" width="600" height="300"
               /></a>
             </div>
           </div>
@@ -236,8 +224,9 @@
       <p style="margin: 20px">TRY OUR AI MODEL NOW BY CLICKING THE BUTTON</p>
       <button
         style="background-color: black; color: white !important; margin: 20px"
+        onclick="goToupload()"
       >
-        <a style="text-decoration: none; color: white" href="upload.html">TRY NOW</a>
+        TRY NOW
       </button>
     </div>
     <!-- Footer -->
@@ -245,26 +234,35 @@
       <div class="container">
         <ul class="icons">
           <li>
-            <a href="about.html" style="text-decoration: none">ABOUT</a>
+            <a href="{{ url_for('about') }}" style="text-decoration: none;">ABOUT</a>
           </li>
           <li>
-            <a href="upload.html" style="text-decoration: none">TRY OUR MUDRA</a>
+            <a href="{{ url_for('upload') }}" style="text-decoration: none;">TRY OUR MUDRA</a
+            >
           </li>
           <li>
-            <a href="#" style="text-decoration: none">OUR DATASET</a>
+            <a href="#" style="text-decoration: none;">OUR DATASET</a
+            >
           </li>
           <li>
-            <a href="#" style="text-decoration: none">CONTACT US</a>
+            <a href="#" style="text-decoration: none;">CONTACT US</a
+            >
           </li>
         </ul>
       </div>
     </footer>
-
+    
     <!-- Scripts -->
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/jquery.scrollex.min.js"></script>
-    <script src="../assets/js/skel.min.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.scrollex.min.js"></script>
+    <script src="../static/js/skel.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script>
+      function 
+        goToupload() {
+        window.location.href = "{{ url_for('upload') }}";
+      }
+    </script>
   </body>
 </html>
