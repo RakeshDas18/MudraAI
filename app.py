@@ -50,26 +50,44 @@ def preprocess_image(image_path):
     return image
 
 
-UNKNOWN_THRESHOLD = 0.7  
+# UNKNOWN_THRESHOLD = 0.7  
 
 def predict_mudra(image_path):
-    image = preprocess_image(image_path)
-    
-    with torch.no_grad():
-        image = image.to(device)
-        output = model(image)
-        probabilities = torch.softmax(output, dim=1)  
-        max_prob, predicted_class = torch.max(probabilities, 1)
+    try:
+        image = preprocess_image(image_path)
+        with torch.no_grad():
+            image = image.to(device)
+            output = model(image)
+            probabilities = torch.softmax(output, dim=1)
+            max_prob, predicted_class = torch.max(probabilities, 1)
+
+            # if max_prob.item() < UNKNOWN_THRESHOLD:
+            #     return 'Unknown Mudra'
+            # else:
+            print(max_prob, predicted_class)
+            return Categories[predicted_class.item()]
+    except Exception as e:
+        return f"Prediction error: {str(e)}"
 
 
-        if max_prob.item() < UNKNOWN_THRESHOLD:
-            un = 'Unknown Mudra'
-            return un
-        else:
-            print(max_prob.item())
-            print(f"Predicted Mudra: {Categories[predicted_class.item()]}")
-            return Categories[predicted_class]
 
+def mudra_describe(mudra):
+    descrption = {  'alopodmo':"Alapadma (Alopodmo) - A fully bloomed lotus. The fingers are spread out and curved slightly, symbolizing beauty, grace, or offering of flowers",
+                    'ankush': "Ankusha (Ankush) – Represents an elephant goad or control. Often symbolizes discipline or steering.", 
+                    'ardhachandra': "Ardhachandra – A half-moon shape. The thumb is extended while other fingers are together and straight. Used to represent the moon, a platter, or even to bless.", 
+                    'bhramar': "Bhramara – The thumb and middle finger touch while the other fingers are curved. It depicts a bee and is also used to represent Krishna, his ornaments, or various animals.", 
+                    'chatur': "Chatura (Chatur) – The thumb touches the ring finger, while the other fingers remain slightly bent. It can show a clever or graceful act, or even a bird.", 
+                    'ghronik': "Ghronika (Ghronik) – Typically used to denote sniffing or smelling. Not very common in all classical dances but has expressive value in storytelling.", 
+                    'hongshashyo': "Hansasya (Hongshashyo) – A swan-like hand; thumb and index finger touch gently while other fingers are extended. Used to denote lightness, grace, or delicate actions.", 
+                    'kangul': "Kangula (Kangul) – Used to show a bell or anklet. The hand shape is stylized and decorative, suitable for symbolic representation.", 
+                    'kodombo': "Kundamva (Kodombo) – A specific gesture, less common, possibly derived from local interpretations. Sometimes used for flowers or buds.", 
+                    'kopitho': "Kapittha (Kopitho) – The thumb is pressed against the bent index finger, while other fingers are closed. It represents Lakshmi or Saraswati, or holding a cymbal", 
+                    'krishnaxarmukh': "Krishna’s Face (Krishnaxarmukh) – A symbolic mudra representing the face of Lord Krishna, often used in devotional storytelling scenes.", 
+                    'mrigoshirsho': "Mriga Shirsha (Mrigoshirsho) – The tips of the thumb and middle finger touch; others are extended. Represents a deer’s head or face, also used to depict searching or gentle animals.", 
+                    'mukul': "Mukul – All fingers brought together to a point, like a lotus bud. Used for offering, showing flowers, or fruits." , 
+                    'unknown': "Please Upload a Single Hand Sattriya Dance Mudra"
+                }
+    return descrption[mudra]
 
 
 # **Fix: Add an upload route**
@@ -90,13 +108,26 @@ def upload_file():
 
         # Predict Mudra
         prediction = predict_mudra(filepath)
-
-        return jsonify({'prediction': prediction})
+        result = mudra_describe(prediction)
+        return jsonify({'prediction': result})
 
 # **Main Route**
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/upload')
+def upload():
+    return render_template('upload.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
