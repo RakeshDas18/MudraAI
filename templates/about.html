@@ -8,22 +8,22 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="../static/css/main.css" />
   </head>
   <body class="subpage">
     <!-- Header -->
     <header id="header">
       <div class="logo">
-        <a href="index.html">Mudra AI</a>
+        <a href="{{ url_for('index') }}">Mudra AI</a>
       </div>
       <a href="#menu">Menu</a>
     </header>
     <!-- Nav -->
     <nav id="menu">
       <ul class="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ai.html">Use AI</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('upload') }}">Use AI</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
       </ul>
     </nav>
     <!-- One -->
@@ -93,10 +93,10 @@
       <div class="container">
         <ul class="icons">
           <li>
-            <a href="about.html" style="text-decoration: none">ABOUT</a>
+            <a href="{{ url_for('about') }}" style="text-decoration: none">ABOUT</a>
           </li>
           <li>
-            <a href="ai.html" style="text-decoration: none">TRY OUR MUDRA</a>
+            <a href="{{ url_for('upload') }}" style="text-decoration: none">TRY OUR MUDRA</a>
           </li>
           <li>
             <a href="#" style="text-decoration: none">OUR DATASET</a>
@@ -109,10 +109,10 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.scrollex.min.js"></script>
+    <script src="../static/js/skel.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/main.js"></script>
   </body>
 </html>
