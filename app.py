@@ -128,6 +128,12 @@ def upload():
 def about():
     return render_template('about.html')
 
+@app.route('/popup')
+def popup():
+    data = request.args.get('data', '')
+    return render_template('popup.html', data=data)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
