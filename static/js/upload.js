@@ -1,5 +1,5 @@
 function goToupload() {
-    window.location.href = "{{ url_for('upload') }}";
+    window.location.href = `/upload`;
   }
   
 // {/* <script> */}
@@ -185,7 +185,10 @@ function uploadFile(file) {
                 if (data.error) {
                     alert("Error: " + data.error);
                 } else {
-                    alert("Predicted Mudra: " + data.prediction);
+                    // alert("Predicted Mudra: " + data.prediction);
+                    const info = data.prediction;
+                    // Redirect using Flask route with query parameter
+                    window.location.href = `/popup?data=${encodeURIComponent(info)}`;
 
                 }
                 console.log(data.prediction)
