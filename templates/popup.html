@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../static/css/main.css" />
     <link rel="stylesheet" href="../static/css/popup.css" />
   </head>
-  <body>
+  <body class="subpage">
     <!-- Header -->
     <header id="header" class="alt">
       <div class="logo">
@@ -22,6 +22,7 @@
       </div>
       <a href="#menu">Menu</a>
     </header>
+
     <!-- Nav -->
     <nav id="menu">
       <ul class="links">
@@ -30,18 +31,27 @@
         <li><a href="{{ url_for('about') }}">About</a></li>
       </ul>
     </nav>
-    <div class="mainDiv">
-      <div class="container">
-        <div class="cookiesContent" id="cookiesPopup">
-          <img src="../static/images/img0001.png" alt="cookies-img" />
-          <h2>MUDRA NAME</h2>
-          <p>{{ data }}</p>
-          <button class="accept" onclick="goToupload()">
-            Try Another Mudra
-          </button>
+
+    <!-- Section Wrapper (Like Upload Page) -->
+    <section id="popup-section" class="wrapper style2">
+      <div class="inner">
+        <div class="box">
+          <div class="content">
+            <div class="main-container">
+              <div class="popup-container">
+                <img src="../static/images/img0001.png" alt="Mudra icon" />
+                <h2>MUDRA NAME</h2>
+                <p>{{ data }}</p>
+                <button class="accept" onclick="goToupload()">
+                  Try Another Mudra
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <!-- Footer -->
     <footer id="footer">
       <div class="container">
@@ -56,15 +66,13 @@
               >TRY OUR MUDRA</a
             >
           </li>
-          <li>
-            <a href="#" style="text-decoration: none">OUR DATASET</a>
-          </li>
-          <li>
-            <a href="#" style="text-decoration: none">CONTACT US</a>
-          </li>
+          <li><a href="#" style="text-decoration: none">OUR DATASET</a></li>
+          <li><a href="#" style="text-decoration: none">CONTACT US</a></li>
         </ul>
       </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/jquery.scrollex.min.js"></script>
     <script src="../static/js/skel.min.js"></script>
