@@ -1,80 +1,152 @@
-
-.mainDiv {
-  font-family: "Roboto", sans-serif;
-  padding: 0;
-  margin: 0;
-  background-color: rgb(0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 85vh;
-  padding-left: 40rem;
+#header.alt {
+    background-color: #000;
+    color: #fff;
 }
 
-.mainDiv .cookiesContent {
-  width: 320px;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffffffd8;
-  color: #000;
-  text-align: center;
-  border-radius: 20px;
-  padding: 30px 30px 70px;
+#header.alt a {
+    color: #fff;
 }
 
-.mainDiv .cookiesContent img {
-  width: 82px;
-  margin-bottom: 15px;
+#menu {
+    background-color: #000;
 }
 
-.mainDiv .cookiesContent p {
-  margin-bottom: 40px;
-  font-size: 18px;
+#menu .links a {
+    color: #fff;
 }
 
-.mainDiv .cookiesContent button.accept {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ed6755;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 200px;
-  padding: 14px;
-  font-size: 12px;
-  color: white;
-  box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+
+/* Use shared layout styling */
+.main-container {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Popup container */
+/* Consistent with upload page */
+.popup-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image */
+.popup-container img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+/* Heading (serif and indigo color) */
+.popup-container h2 {
+    font-size: clamp(24px, 5vw, 40px);
+    color: #1e1e1f;
+    font-weight: bolder;
+    font-family: serif;
+    margin-bottom: 10px;
+}
+
+/* Paragraph text (slightly gray for readability) */
+.popup-container p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+/* Button (matching upload page hover effect) */
+.popup-container button.accept {
+    background-color: #6a5acd;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    /* padding: 14px; */
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 6px 18px -5px rgba(106, 90, 205, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.popup-container button.accept:hover,
+.popup-container button.accept:active {
+    background-color: #5a4acd;
+    transform: translateY(-2px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .popup-container {
+        padding: 20px;
+    }
+
+    .popup-container h2 {
+        font-size: 28px;
+    }
+
+    .popup-container p {
+        font-size: 16px;
+    }
+
+    .popup-container button.accept {
+        width: 100%;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
-  .mainDiv {
-    font-family: "Roboto", sans-serif;
-    padding: 0;
-    margin: 0;
-    background-color: rgba(144, 144, 144, 0.075);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 85vh;
-    padding-left: 2rem;
-  }
+    .popup-container {
+        padding: 16px;
+    }
 
+    .popup-container img {
+        width: 60px;
+    }
+
+    .popup-container h2 {
+        font-size: 24px;
+    }
+
+    .popup-container p {
+        font-size: 14px;
+    }
 }
 
-@media (max-width: 768px) {
-  .mainDiv {
-    font-family: "Roboto", sans-serif;
-    padding: 0;
-    margin: 0;
-    background-color: rgba(144, 144, 144, 0.075);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 85vh;
-    padding-left: 13rem;
-  }
+/* Optional background fix for body (light like upload page) */
+body {
+    background-color: #f7f8ff;
+}
 
+/* Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+/* Make sure the html and body use the full height and background */
+html, body {
+  height: 100%;
+  background-color: #000; /* or #f7f8ff if you want light background */
+  color: #fff;
+}
+
+/* Ensure header and footer stretch full width and inherit background */
+#header, #footer {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
 }
