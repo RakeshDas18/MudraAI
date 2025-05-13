@@ -25,8 +25,7 @@ class SVM(nn.Module):
         return self.fc(x)
 
 # Define categories
-Categories = ['alopodmo', 'ankush', 'ardhachandra', 'bhramar', 'chatur', 'ghronik', 'hongshashyo', 'kangul', 'kodombo', 'kopitho', 
-              'krishnaxarmukh', 'mrigoshirsho', 'mukul', 'unknown']
+Categories = ['Alopodmo', 'Ankush', 'Ardhachandra', 'Bhramar', 'Chatur', 'Ghronik', 'Hongshashyo', 'Kangul', 'Kodombo', 'Kopitho', 'Krishnaxarmukh', 'Mrigoshirsho', 'Mukul', 'Unknown']
 
 # Load the model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -72,20 +71,20 @@ def predict_mudra(image_path):
 
 
 def mudra_describe(mudra):
-    descrption = {  'alopodmo':"Alapadma (Alopodmo) - A fully bloomed lotus. The fingers are spread out and curved slightly, symbolizing beauty, grace, or offering of flowers",
-                    'ankush': "Ankusha (Ankush) – Represents an elephant goad or control. Often symbolizes discipline or steering.", 
-                    'ardhachandra': "Ardhachandra – A half-moon shape. The thumb is extended while other fingers are together and straight. Used to represent the moon, a platter, or even to bless.", 
-                    'bhramar': "Bhramara – The thumb and middle finger touch while the other fingers are curved. It depicts a bee and is also used to represent Krishna, his ornaments, or various animals.", 
-                    'chatur': "Chatura (Chatur) – The thumb touches the ring finger, while the other fingers remain slightly bent. It can show a clever or graceful act, or even a bird.", 
-                    'ghronik': "Ghronika (Ghronik) – Typically used to denote sniffing or smelling. Not very common in all classical dances but has expressive value in storytelling.", 
-                    'hongshashyo': "Hansasya (Hongshashyo) – A swan-like hand; thumb and index finger touch gently while other fingers are extended. Used to denote lightness, grace, or delicate actions.", 
-                    'kangul': "Kangula (Kangul) – Used to show a bell or anklet. The hand shape is stylized and decorative, suitable for symbolic representation.", 
-                    'kodombo': "Kundamva (Kodombo) – A specific gesture, less common, possibly derived from local interpretations. Sometimes used for flowers or buds.", 
-                    'kopitho': "Kapittha (Kopitho) – The thumb is pressed against the bent index finger, while other fingers are closed. It represents Lakshmi or Saraswati, or holding a cymbal", 
-                    'krishnaxarmukh': "Krishna’s Face (Krishnaxarmukh) – A symbolic mudra representing the face of Lord Krishna, often used in devotional storytelling scenes.", 
-                    'mrigoshirsho': "Mriga Shirsha (Mrigoshirsho) – The tips of the thumb and middle finger touch; others are extended. Represents a deer’s head or face, also used to depict searching or gentle animals.", 
-                    'mukul': "Mukul – All fingers brought together to a point, like a lotus bud. Used for offering, showing flowers, or fruits." , 
-                    'unknown': "Please Upload a Single Hand Sattriya Dance Mudra"
+    descrption = {  'Alopodmo':"Alapadma (Alopodmo) - A fully bloomed lotus. The fingers are spread out and curved slightly, symbolizing beauty, grace, or offering of flowers",
+                    'Ankush': "Ankusha (Ankush) – Represents an elephant goad or control. Often symbolizes discipline or steering.", 
+                    'Ardhachandra': "Ardhachandra – A half-moon shape. The thumb is extended while other fingers are together and straight. Used to represent the moon, a platter, or even to bless.", 
+                    'Bhramar': "Bhramara – The thumb and middle finger touch while the other fingers are curved. It depicts a bee and is also used to represent Krishna, his ornaments, or various animals.", 
+                    'Chatur': "Chatura (Chatur) – The thumb touches the ring finger, while the other fingers remain slightly bent. It can show a clever or graceful act, or even a bird.", 
+                    'Ghronik': "Ghronika (Ghronik) – Typically used to denote sniffing or smelling. Not very common in all classical dances but has expressive value in storytelling.", 
+                    'Hongshashyo': "Hansasya (Hongshashyo) – A swan-like hand; thumb and index finger touch gently while other fingers are extended. Used to denote lightness, grace, or delicate actions.", 
+                    'Kangul': "Kangula (Kangul) – Used to show a bell or anklet. The hand shape is stylized and decorative, suitable for symbolic representation.", 
+                    'Kodombo': "Kundamva (Kodombo) – A specific gesture, less common, possibly derived from local interpretations. Sometimes used for flowers or buds.", 
+                    'Kopitho': "Kapittha (Kopitho) – The thumb is pressed against the bent index finger, while other fingers are closed. It represents Lakshmi or Saraswati, or holding a cymbal", 
+                    'Krishnaxarmukh': "Krishna’s Face (Krishnaxarmukh) – A symbolic mudra representing the face of Lord Krishna, often used in devotional storytelling scenes.", 
+                    'Mrigoshirsho': "Mriga Shirsha (Mrigoshirsho) – The tips of the thumb and middle finger touch; others are extended. Represents a deer’s head or face, also used to depict searching or gentle animals.", 
+                    'Mukul': "Mukul – All fingers brought together to a point, like a lotus bud. Used for offering, showing flowers, or fruits." , 
+                    'Unknown': "Please Upload a Single Hand Sattriya Dance Mudra"
                 }
     return descrption[mudra]
 
