@@ -187,8 +187,10 @@ function uploadFile(file) {
                 } else {
                     // alert("Predicted Mudra: " + data.prediction);
                     const info = data.prediction;
+                    const mudra = data.mudra;
                     // Redirect using Flask route with query parameter
-                    window.location.href = `/popup?data=${encodeURIComponent(info)}`;
+                    // window.location.href = `/popup?data=${encodeURIComponent(info)}`;
+                    window.location.href = `/popup?info=${encodeURIComponent(info)}&mudra=${encodeURIComponent(mudra)}`;
 
                 }
                 console.log(data.prediction)

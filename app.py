@@ -109,7 +109,7 @@ def upload_file():
         # Predict Mudra
         prediction = predict_mudra(filepath)
         result = mudra_describe(prediction)
-        return jsonify({'prediction': result})
+        return jsonify({'prediction': result, 'mudra': prediction})
 
 # **Main Route**
 # @app.route('/')
@@ -130,8 +130,11 @@ def about():
 
 @app.route('/popup')
 def popup():
-    data = request.args.get('data', '')
-    return render_template('popup.html', data=data)
+    # data = request.args.get('data', '')
+    # return render_template('popup.html', data=data)
+    info = request.args.get('info', '')
+    mudra = request.args.get('mudra')
+    return render_template('popup.html', info=info, mudra=mudra)
 
 
 
