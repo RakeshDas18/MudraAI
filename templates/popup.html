@@ -42,8 +42,8 @@
                 <img src="../static/images/img0001.png" alt="Mudra icon" />
                 <h2>{{ mudra }}</h2>
                 <p>{{ info }}</p>
-                <button class="accept" onclick="goToupload()">
-                  Try Another Mudra
+                <button class="accept">
+                  <a a href="{{ url_for('upload') }}" style="text-decoration: none; color: white;">Try Another Mudra</a>
                 </button>
               </div>
             </div>
