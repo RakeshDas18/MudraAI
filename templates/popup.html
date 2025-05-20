@@ -12,11 +12,11 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="../static/css/main.css" />
-    <link rel="stylesheet" href="../static/css/popup.css" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
   </head>
   <body class="subpage">
     <!-- Header -->
-    <header id="header" class="alt">
+    <header id="header">
       <div class="logo">
         <a href="{{ url_for('index') }}">Mudra AI</a>
       </div>
@@ -32,19 +32,33 @@
       </ul>
     </nav>
 
-    <!-- Section Wrapper (Like Upload Page) -->
-    <section id="popup-section" class="wrapper style2">
+    <!-- One -->
+    <section id="One" class="wrapper style3">
+      <div class="inner">
+        <header class="align-center">
+          <p>MUDRA RESULT</p>
+          <h2>HERE IS YOUR MUDRA RECOGNITION RESULT</h2>
+        </header>
+      </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style2">
       <div class="inner">
         <div class="box">
           <div class="content">
             <div class="main-container">
-              <div class="popup-container">
-                <img src="../static/images/img0001.png" alt="Mudra icon" />
-                <h2>{{ mudra }}</h2>
-                <p>{{ info }}</p>
-                <button class="accept">
-                  <a a href="{{ url_for('upload') }}" style="text-decoration: none; color: white;">Try Another Mudra</a>
-                </button>
+              <div class="result-container" style="text-align: center;">
+                <img
+                  src="../static/images/img0001.png"
+                  alt="Mudra icon"
+                  style="max-width: 150px; margin-bottom: 20px;"
+                />
+                <h2 style="margin-bottom: 10px;">{{ mudra }}</h2>
+                <p style="font-size: 1.1em; margin-bottom: 30px;">{{ info }}</p>
+                <a href="{{ url_for('upload') }}" class="button special" style="text-decoration: none;">
+                  Try Another Mudra
+                </a>
               </div>
             </div>
           </div>
@@ -57,17 +71,17 @@
       <div class="container">
         <ul class="icons">
           <li>
-            <a href="{{ url_for('about') }}" style="text-decoration: none"
-              >ABOUT</a
-            >
+            <a href="{{ url_for('about') }}" style="text-decoration: none;">ABOUT</a>
           </li>
           <li>
-            <a href="{{ url_for('upload') }}" style="text-decoration: none"
-              >TRY OUR MUDRA</a
-            >
+            <a href="{{ url_for('upload') }}" style="text-decoration: none;">TRY OUR MUDRA</a>
           </li>
-          <li><a href="#" style="text-decoration: none">OUR DATASET</a></li>
-          <li><a href="#" style="text-decoration: none">CONTACT US</a></li>
+          <li>
+            <a href="#" style="text-decoration: none;">OUR DATASET</a>
+          </li>
+          <li>
+            <a href="#" style="text-decoration: none;">CONTACT US</a>
+          </li>
         </ul>
       </div>
     </footer>
