@@ -108,13 +108,10 @@ def upload_file():
         # Predict Mudra
         prediction = predict_mudra(filepath)
         result = mudra_describe(prediction)
-        return jsonify({'prediction': result, 'mudra': prediction})
+        return jsonify({'prediction': result,
+                        'mudra': prediction})
 
 # **Main Route**
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -129,12 +126,29 @@ def about():
 
 @app.route('/popup')
 def popup():
-    # data = request.args.get('data', '')
-    # return render_template('popup.html', data=data)
     info = request.args.get('info', '')
     mudra = request.args.get('mudra')
-    return render_template('popup.html', info=info, mudra=mudra)
+    
+    mudra_map = {
+                    'Alopodmo': 'alopodmo.jpg',
+                    'Ankush': 'ankush.jpg',
+                    'Ardhachandra': 'ardhachandra.jpg',
+                    'Bhramar': 'bhramar.jpg',
+                    'Chatur': 'chatur.png',
+                    'Ghronik': 'ghronik.jpg',
+                    'Hongshashyo': 'hongshashyo.jpg',
+                    'Kangul': 'kangul.png',
+                    'Kodombo': 'kodombo.jpg',
+                    'Kopitho': 'kopitho.jpg',
+                    'Mrigoshirsho': 'mrigoshirsho.png',
+                    'Krishnaxarmukh': 'krishnaxarmukh.png',
+                    'Mukul': 'mukul.png',
+                    'Unknown': ''
+                }
 
+    mudra_file = mudra_map.get(mudra, None)  # Handle unknown mudra gracefully
+
+    return render_template('popup.html', info=info, mudra=mudra, mudra_file=mudra_file)
 
 
 if __name__ == '__main__':
