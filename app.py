@@ -29,17 +29,17 @@ Categories = ['Alopodmo', 'Ankush', 'Ardhachandra', 'Bhramar', 'Chatur', 'Ghroni
 
 # Load the model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-input_dim = 150 * 150 * 3
+input_dim = 256 * 256 * 3
 num_classes = len(Categories)
 
 model = SVM(input_dim, num_classes).to(device)
-model.load_state_dict(torch.load('mudra_model_7_with_unknown.pth', map_location=device)) 
+model.load_state_dict(torch.load('mudra_model_8_2.pth', map_location=device)) 
 model.eval()  
 
 
 def preprocess_image(image_path):
     transform = transforms.Compose([
-        transforms.Resize((150, 150)),
+        transforms.Resize((256, 256)),
         transforms.ColorJitter(brightness=0.2, contrast=0.2),
         transforms.ToTensor()
     ])
@@ -49,7 +49,7 @@ def preprocess_image(image_path):
     return image
 
 
-# UNKNOWN_THRESHOLD = 0.7  
+UNKNOWN_THRESHOLD = 0.7  
 
 def predict_mudra(image_path):
     try:
@@ -60,11 +60,11 @@ def predict_mudra(image_path):
             probabilities = torch.softmax(output, dim=1)
             max_prob, predicted_class = torch.max(probabilities, 1)
 
-            # if max_prob.item() < UNKNOWN_THRESHOLD:
-            #     return 'Unknown Mudra'
-            # else:
-            print(max_prob, predicted_class)
-            return Categories[predicted_class.item()]
+            if max_prob.item() < UNKNOWN_THRESHOLD:
+                return 'unknown'
+            else:
+                print(max_prob, predicted_class)
+                return Categories[predicted_class.item()]
     except Exception as e:
         return f"Prediction error: {str(e)}"
 
@@ -152,4 +152,4 @@ def popup():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
